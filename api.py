@@ -9,8 +9,9 @@ def home():
 
 @app.route('/file_upload/<name>')
 def process(name):
-        print(f"\n\n{name}\n\n")
-        return jsonify({'data': name})
+    filename = "/".join(name.split("_"))
+    print(f"\n\nThe uploaded file is {filename}\n\n")
+    return jsonify({'data': name})
 
 @app.route('/home/<int:num>')
 def disp(num):
