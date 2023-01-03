@@ -7,6 +7,10 @@ def home():
         print(f"\n\n{data}\n\n")
         return jsonify({'data': data})
 
+@app.route('/file_upload/<name>')
+def process(name):
+        print(f"\n\n{name}\n\n")
+        return jsonify({'data': name})
 
 @app.route('/home/<int:num>')
 def disp(num):
